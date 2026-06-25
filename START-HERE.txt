@@ -1,0 +1,25 @@
+PlexurioMail — how to run it
+============================
+
+PlexurioMail is an APP, not a web page. It has a small server that must be
+running. Opening index.html by itself will look empty — that's expected.
+
+ONE-TIME: install Node.js (free) from https://nodejs.org  (choose the "LTS").
+
+TO START:
+  • Windows:  double-click  start.bat
+  • Mac:      double-click  start.command
+              (first time: right-click → Open, to get past the security prompt)
+
+The first launch installs everything automatically (takes a minute), then your
+browser opens at:
+
+      http://localhost:3000
+
+Keep the little black window open while you use the app. Close it to stop.
+
+That's it. Add a mailbox, click the flame to warm it up, build a campaign, go live.
+
+It starts in SAFE "dry-run" mode (nothing is actually emailed) so you can click
+around freely. When you're ready to send for real, open the .env file and change
+DRY_RUN=1 to DRY_RUN=0, then restart.

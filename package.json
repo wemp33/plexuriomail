@@ -1,0 +1,22 @@
+{
+  "name": "plexuriomail",
+  "version": "1.0.0",
+  "description": "PlexurioMail — self-hosted cold-email platform: mailboxes with warmup, multi-step A/B campaigns, schedules, unified inbox, reputation guardrails.",
+  "type": "module",
+  "main": "src/server.js",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node src/server.js",
+    "seed": "node src/seed.js",
+    "test:engine": "node test/engine.test.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "imapflow": "^1.4.0",
+    "nodemailer": "^6.10.0"
+  },
+  "optionalDependencies": {
+    "better-sqlite3": "^12.2.0"
+  }
+}

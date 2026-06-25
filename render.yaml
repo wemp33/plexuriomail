@@ -1,0 +1,21 @@
+# One-click deploy on Render: push this repo to GitHub, then in Render click
+# "New +" → "Blueprint" and select the repo. Render reads this file.
+services:
+  - type: web
+    name: plexuriomail
+    runtime: docker
+    plan: starter            # $7/mo, always-on
+    healthCheckPath: /api/engine
+    envVars:
+      - key: DRY_RUN
+        value: "1"           # change to "0" when you're ready to send for real
+      - key: DB_PATH
+        value: /data/plexuriomail.db
+      - key: DASH_USER
+        value: admin
+      - key: DASH_PASS
+        sync: false          # set your own password in the Render dashboard
+    disk:
+      name: data
+      mountPath: /data       # SQLite lives here so it survives restarts/deploys
+      sizeGB: 1
