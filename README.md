@@ -1,2 +1,0 @@
-# plexuriomail
-PlexurioMail Server
